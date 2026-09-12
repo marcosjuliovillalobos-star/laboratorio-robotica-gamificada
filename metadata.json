@@ -1,0 +1,6 @@
+{
+  "name": "Laboratorio Virtual de Robótica Aplicada",
+  "description": "Plataforma educativa interactiva y gamificada para el Taller de Robótica Aplicada de secundaria. Jugá, programá, probá y mejorá con simuladores, sensores y desafíos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

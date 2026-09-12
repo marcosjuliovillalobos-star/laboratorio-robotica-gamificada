@@ -1,0 +1,270 @@
+import { Achievement, PedagogyAxis } from '../types';
+
+export const INITIAL_ACHIEVEMENTS: Achievement[] = [
+  {
+    id: 'first_mission',
+    title: 'Primera Misión',
+    description: 'Completar tu primera actividad en el laboratorio.',
+    icon: '🏅',
+    unlocked: false,
+    xpReward: 50,
+  },
+  {
+    id: 'logical_mind',
+    title: 'Pensamiento Lógico',
+    description: 'Resolver correctamente una actividad de secuencias y algoritmos.',
+    icon: '🧠',
+    unlocked: false,
+    xpReward: 75,
+  },
+  {
+    id: 'detector',
+    title: 'Detector Experto',
+    description: 'Experimentar y calibrar sensores de luz, sonido y distancia.',
+    icon: '👁️',
+    unlocked: false,
+    xpReward: 100,
+  },
+  {
+    id: 'block_coder',
+    title: 'Programador por Bloques',
+    description: 'Construir y ejecutar un algoritmo por bloques sin código complejo.',
+    icon: '⚡',
+    unlocked: false,
+    xpReward: 100,
+  },
+  {
+    id: 'robot_pilot',
+    title: 'Piloto Robótico',
+    description: 'Guiar al robot evitando obstáculos en el simulador.',
+    icon: '🤖',
+    unlocked: false,
+    xpReward: 120,
+  },
+  {
+    id: 'debugger',
+    title: 'Reparador de Sistemas',
+    description: 'Identificar un error lógico en un programa y repararlo con éxito.',
+    icon: '🔧',
+    unlocked: false,
+    xpReward: 120,
+  },
+  {
+    id: 'greenhouse_master',
+    title: 'Operación Invernadero',
+    description: 'Integrar sensores, decisiones y actuadores en el proyecto final.',
+    icon: '🌱',
+    unlocked: false,
+    xpReward: 150,
+  },
+  {
+    id: 'teamwork',
+    title: 'Alianza Cooperativa',
+    description: 'Completar una misión colaborativa en Modo Equipo.',
+    icon: '👥',
+    unlocked: false,
+    xpReward: 100,
+  },
+  {
+    id: 'creative_engineer',
+    title: 'Diseñador Robótico',
+    description: 'Crear tu propio robot personalizado con ficha técnica.',
+    icon: '🎨',
+    unlocked: false,
+    xpReward: 80,
+  },
+  {
+    id: 'robotics_master',
+    title: 'Maestro de la Robótica',
+    description: 'Superar todos los módulos del Laboratorio Virtual.',
+    icon: '🏆',
+    unlocked: false,
+    xpReward: 250,
+  },
+];
+
+export const PEDAGOGY_AXES: PedagogyAxis[] = [
+  {
+    id: 1,
+    title: 'Eje 1: Introducción a la Robótica',
+    description: 'Comprender qué es un robot, sus componentes fundamentales y las normas de seguridad en el taller.',
+    topics: [
+      '¿Qué es un robot? (Entrada → Proceso → Salida)',
+      'Diferencia entre máquina automática y robot autónomo',
+      'Estructura (chasis y soporte físico)',
+      'Sensores (órganos sensoriales artificiales)',
+      'Actuadores (motores, luces, parlantes)',
+      'Seguridad en el taller y cuidado de equipos',
+    ],
+    competencies: [
+      'Identificar sistemas robóticos en el entorno cotidiano',
+      'Reconocer la función de sensores y actuadores en un diseño básico',
+    ],
+    icon: '🤖',
+  },
+  {
+    id: 2,
+    title: 'Eje 2: Pensamiento Computacional',
+    description: 'Aprender a descomponer problemas en secuencias lógicas paso a paso y usar condicionales SI / ENTONCES.',
+    topics: [
+      'Concepto de Algoritmo como receta ordenada',
+      'Secuencias precisas de instrucciones',
+      'Estructuras de decisión: SI / ENTONCES (Condicionales)',
+      'Programación por bloques visuales',
+      'Resolución de desafíos por ensayo, error constructivo y mejora',
+    ],
+    competencies: [
+      'Diseñar algoritmos sencillos para tareas específicas',
+      'Depurar y corregir instrucciones que producen resultados imprevistos',
+    ],
+    icon: '🧠',
+  },
+  {
+    id: 3,
+    title: 'Eje 3: Construcción y Programación',
+    description: 'Explorar el movimiento mecánico, giros, y cómo los sensores del entorno guían el comportamiento.',
+    topics: [
+      'Cinemática básica: Avance, retroceso y radio de giro',
+      'Sensor de Luz (LDR) para ambientes oscuros y diurnos',
+      'Sensor de Sonido (Micrófono) y detección de decibeles',
+      'Sensor de Distancia (Ultrasonido) para evitar colisiones',
+      'Sincronización entre lectura de sensor y respuesta de motor',
+    ],
+    competencies: [
+      'Interpretar lecturas de sensores en magnitudes simples (cm, dB, % luz)',
+      'Vincular una lectura sensorial a una acción física inmediata',
+    ],
+    icon: '⚙️',
+  },
+  {
+    id: 4,
+    title: 'Eje 4: Proyecto Integrador',
+    description: 'Metodología proyectual completa: desde la detección de una necesidad hasta el prototipo automatizado.',
+    topics: [
+      'Identificación de un problema concreto (ej: cultivo hidropónico / invernadero)',
+      'Selección justificada de sensores y actuadores requeridos',
+      'Diseño del algoritmo de control integral',
+      'Pruebas de simulación y calibración',
+      'Iteración, mejora continua y presentación de resultados',
+    ],
+    competencies: [
+      'Modelar una solución automatizada integrando software y hardware',
+      'Comunicar el funcionamiento técnico mediante fichas de proyecto',
+    ],
+    icon: '🌱',
+  },
+];
+
+export interface LevelInfo {
+  id: number;
+  slug: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  axis: string;
+  xpReward: number;
+  icon: string;
+}
+
+export const LEVELS_CONFIG: LevelInfo[] = [
+  {
+    id: 1,
+    slug: 'level_1',
+    title: 'Conocé al Robot',
+    subtitle: '¿Qué es y qué no es un robot?',
+    description: 'Distingue entre máquinas comunes, automatizaciones fijas y robots con entrada, proceso y acción.',
+    axis: 'Eje 1',
+    xpReward: 60,
+    icon: '🔍',
+  },
+  {
+    id: 2,
+    slug: 'level_2',
+    title: 'Partes del Robot',
+    subtitle: 'Estructura, Sensores y Actuadores',
+    description: 'Explorá el interior de un robot y descubrí cómo interactúan el chasis, los ojos y los motores.',
+    axis: 'Eje 1',
+    xpReward: 70,
+    icon: '🧩',
+  },
+  {
+    id: 3,
+    slug: 'level_3',
+    title: 'Ordená el Robot',
+    subtitle: 'Secuencias paso a paso',
+    description: 'Ordená las tarjetas de movimiento para guiar a ROBI hasta la estrella en la cuadrícula de pruebas.',
+    axis: 'Eje 2',
+    xpReward: 80,
+    icon: '➡️',
+  },
+  {
+    id: 4,
+    slug: 'level_4',
+    title: 'Algoritmos',
+    subtitle: 'Instrucciones ordenadas',
+    description: 'Pensá como programador: ordená los pasos para resolver problemas cotidianos y robóticos.',
+    axis: 'Eje 2',
+    xpReward: 80,
+    icon: '📋',
+  },
+  {
+    id: 5,
+    slug: 'level_5',
+    title: 'SI / ENTONCES',
+    subtitle: 'Toma de decisiones lógicas',
+    description: 'Entrená al robot para decidir qué hacer según lo que encuentre en su camino.',
+    axis: 'Eje 2',
+    xpReward: 90,
+    icon: '🔀',
+  },
+  {
+    id: 6,
+    slug: 'level_6',
+    title: 'Programación por Bloques',
+    subtitle: 'Bloques de código visual',
+    description: 'Armá secuencias con bloques de avanzar, girar, repetir y condiciones para superar el circuito.',
+    axis: 'Eje 2 y 3',
+    xpReward: 100,
+    icon: '🟦',
+  },
+  {
+    id: 7,
+    slug: 'level_7',
+    title: 'Sala de Sensores',
+    subtitle: 'Luz, Sonido y Distancia',
+    description: 'Experimentá en tres bancos de pruebas: regulá la luz, medí el volumen y frená a tiempo con ultrasonido.',
+    axis: 'Eje 3',
+    xpReward: 120,
+    icon: '📡',
+  },
+  {
+    id: 8,
+    slug: 'level_8_avoid',
+    title: 'Evitá el Obstáculo',
+    subtitle: 'Desafío de navegación',
+    description: 'Poné a prueba tus habilidades guiando al robot en tres circuitos de dificultad creciente.',
+    axis: 'Eje 3',
+    xpReward: 100,
+    icon: '🚧',
+  },
+  {
+    id: 9,
+    slug: 'level_8_repair',
+    title: 'Repará el Robot',
+    subtitle: 'Depuración y solución de fallos',
+    description: '¡Alerta de código! Encontrá los errores lógicos en el programa y salvá la misión.',
+    axis: 'Eje 2 y 3',
+    xpReward: 110,
+    icon: '🔧',
+  },
+  {
+    id: 10,
+    slug: 'level_final_greenhouse',
+    title: 'Misión Invernadero',
+    subtitle: 'Proyecto Integrador Eje 4',
+    description: 'Automatizá un invernadero escolar conectando sensores de suelo/clima con riego y ventilación.',
+    axis: 'Eje 4',
+    xpReward: 150,
+    icon: '🌱',
+  },
+];
